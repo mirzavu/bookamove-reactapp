@@ -82,6 +82,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -104,6 +105,7 @@ export default class App extends React.Component {
                 //           }}
                 title={l.name} 
                 titleStyle={{ fontSize: 16, paddingLeft: 15, fontWeight: '500' }}
+                onPress={() => {navigate('MoveDetail');}}
               />
             ))
           }
