@@ -47,8 +47,9 @@ export default class App extends React.Component {
   }
 
   onPressGo = () => {
+    // this.props.navigation.navigate('DrawerOpen');
     const {navigate} = this.props.navigation;
-    navigate('Dashboard');
+    navigate('MyMoves');
   }
 
   render() {

@@ -1,9 +1,8 @@
 export default {
-	container: {
+  container: {
     flex: 1,
     backgroundColor: 'white',
-    padding: 35,
-    fontSize: 20
+    padding: 25
   },
   rows: {
     flex: 1,
@@ -22,11 +21,11 @@ export default {
     justifyContent: 'flex-start'
   },
   label: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#234885'
   },
   value: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#cd3754'
   },
   imageContainer: {
@@ -47,5 +46,10 @@ export default {
   goButtonText: {
     color: 'white',
     fontSize: 20,
+  },
+  divider: {
+	backgroundColor: '#59568f', 
+	marginVertical: 10
   }
+  
 };
