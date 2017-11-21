@@ -1,8 +1,7 @@
 
 import React from 'react';
-
-// Navigation
-import { addNavigationHelpers } from 'react-navigation';
+import { BackHandler } from "react-native";
+import { addNavigationHelpers, NavigationActions } from 'react-navigation';
 import { MainNav } from './NavigationConfiguration';
 
 //Redux
@@ -15,7 +14,21 @@ const mapStateToProps = (state) => {
 };
 
 class MainNavigation extends React.Component {
-
+  componentDidMount() {
+    BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
+  }
+  componentWillUnmount() {
+    BackHandler.removeEventListener("hardwareBackPress", this.onBackPress);
+  }
+  onBackPress = () => {
+    const { dispatch, navigationState } = this.props;
+    console.log(navigationState);
+    if (navigationState.index === 0) {
+      BackHandler.exitApp();
+    }
+    dispatch(NavigationActions.back());
+    return true;
+  };
   render() {
     const { dispatch, navigationState } = this.props
     return (
