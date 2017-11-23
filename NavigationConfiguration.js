@@ -11,6 +11,7 @@ import {
 import LoginScreen from './app/components/Login/LoginScreen';
 import MyMovesScreen from './app/components/MyMoves/MyMovesScreen';
 import MoveDetailScreen from './app/components/MoveDetail/MoveDetailScreen';
+// import Drawer from './app/components/Drawer/Drawer'
 
 const Drawer = DrawerNavigator({
   MyMoves: {
@@ -23,7 +24,7 @@ const Drawer = DrawerNavigator({
 
 export const MainNav = StackNavigator({
   Login: { screen: LoginScreen },
-  DrawerScreen: { screen: Drawer },
+  DrawerScreen: {screen: Drawer},
 }, {
   mode: 'card',
   cardStyle: {  //To avoid status bar overlapping
