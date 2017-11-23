@@ -1,21 +1,23 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 
 // Navigation
 import { MainNavReducer } from '../NavigationConfiguration';
+import { DrawerNav } from './components/Drawer/DrawerConfiguration';
+import dataReducer from './dataReducer';
 
 // Middleware
 const middleware = () => {
-  return applyMiddleware(logger);
+  return applyMiddleware(thunk, logger);
 };
 
-console.log(logger);
 
 export default createStore(
   combineReducers({
     nav: MainNavReducer,
-
-    // tabOne: (state, action) => NavigatorTabOne.router.getStateForAction(action,state),
+    Drawer: (state, action) => DrawerNav.router.getStateForAction(action, state),
+    dataReducer
   }),
   middleware()
 );

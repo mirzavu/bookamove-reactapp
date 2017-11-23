@@ -1,6 +1,6 @@
 {
   "name": "bookamoveapp",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "devDependencies": {
     "eslint-config-rallycoding": "^3.2.0",
@@ -27,6 +27,7 @@
     "react-navigation": "^1.0.0-beta.16",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   }
 }
